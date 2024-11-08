@@ -1,0 +1,16 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block title %}Iniciar Sesión{% endblock %}
+
+{% block content %}
+     <div class="form-container"></div>
+     <h2>Iniciar Sesión</h2>
+
+     <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+       <p><button type="submit" class="btn-confirmar">Ingresar</button></p> 
+     </form>
+</div>
+{% endblock %}
+

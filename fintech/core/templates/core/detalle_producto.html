@@ -1,0 +1,14 @@
+{% extends "core/base.html" %}
+
+{% block title %}Detalle del Producto{% endblock %}
+
+{% block content %}
+<h2>{{ producto.nombre }}</h2>
+<div class="producto-detalle">
+    <p>{{ producto.descripcion }}</p>
+    <p><strong>Tasa de Retorno:</strong> {{ producto.tasa_retorno }}%</p>
+    <p><strong>Plazo:</strong> {{ producto.plazo }} meses</p>
+    <p><strong>Nivel de Riesgo:</strong> {{ producto.riesgo }}</p>
+    <a href="{% url 'core:invertir' producto.id %}" class="btn-invertir">Invertir en este Producto</a>
+</div>
+{% endblock %}

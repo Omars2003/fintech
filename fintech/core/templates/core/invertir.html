@@ -1,0 +1,15 @@
+{% extends "core/base.html" %}
+
+{% block title %}Invertir en Producto{% endblock %}
+
+{% block content %}
+<h2>Invertir en {{ producto.nombre }}</h2>
+<div class="formulario-inversion">
+    <form method="post">
+        {% csrf_token %}
+        <label for="monto">Monto a Invertir:</label>
+        <input type="number" name="monto" id="monto" required placeholder="Ingrese el monto en moneda local">
+        <button type="submit" class="btn-confirmar">Confirmar Inversión</button>
+    </form>
+</div>
+{% endblock %}

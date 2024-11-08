@@ -1,0 +1,18 @@
+{% extends "core/base.html" %}
+
+{% block title %}Productos Financieros{% endblock %}
+
+{% block content %}
+<h2>Productos Financieros</h2>
+<div class="productos-lista">
+    {% for producto in productos %}
+        <div class="producto">
+            <h3>{{ producto.nombre }}</h3>
+            <p>{{ producto.descripcion|truncatewords:20 }}</p>
+            <p><strong>Tasa de Retorno:</strong> {{ producto.tasa_retorno }}%</p>
+            <p><strong>Plazo:</strong> {{ producto.plazo }} meses</p>
+            <a href="{% url 'core:detalle_producto' producto.id %}" class="btn-detalle">Ver Detalle</a>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

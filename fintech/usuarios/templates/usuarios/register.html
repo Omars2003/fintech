@@ -1,0 +1,15 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}Registrarse{% endblock %}
+
+{% block content %}
+<div class="form-container"></div>
+<h2>Crear Cuenta</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}  <!-- Muestra todos los campos del formulario de registro en formato de párrafos -->
+   
+    <p><button type="submit" class="btn-confirmar">Registrarse</button></p>
+</form>
+{% endblock %}
